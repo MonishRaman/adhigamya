@@ -34,6 +34,12 @@ export const Route = createRootRoute({
       { name: "author", content: "CSI Student Branch · DSATM" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "ADHIGAMYA 2026 — AI Tech Conclave | DSATM" },
+      { name: "twitter:title", content: "ADHIGAMYA 2026 — AI Tech Conclave | DSATM" },
+      { property: "og:description", content: "AI Tech Conclave 2026 — DSATM. 4–5 May. ₹1L+ prize pool." },
+      { name: "twitter:description", content: "AI Tech Conclave 2026 — DSATM. 4–5 May. ₹1L+ prize pool." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b3f9fdac-042b-4135-9c42-c371aa588102/id-preview-14cea5cf--4f9178a8-68cd-4597-b7d4-e5660bdc1bc0.lovable.app-1777111759214.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b3f9fdac-042b-4135-9c42-c371aa588102/id-preview-14cea5cf--4f9178a8-68cd-4597-b7d4-e5660bdc1bc0.lovable.app-1777111759214.png" },
     ],
     links: [
       {
