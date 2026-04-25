@@ -1,6 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { Link } from "@tanstack/react-router";
 import { Calendar, MapPin, Trophy, Sparkles, ChevronRight, Cpu, Zap, Code2, Brain, Network, Rocket, ArrowRight, Menu, X } from "lucide-react";
 
 const REGISTER_URL = "https://forms.gle/PHmV7iH1A7CuWjq98";
