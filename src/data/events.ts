@@ -74,7 +74,7 @@ export const events: EventDetail[] = [
     tag: "20-Hour Hackathon",
     desc: "An overnight sprint to ship. Real problems, real prototypes, infinite caffeine.",
     longDesc:
-      "Udbhav (उद्भव — 'origin / emergence') is the marquee 20-hour hackathon of ADHIGAMYA. You'll pick a track — AI for Good, FinTech, Smart Campus, or Open Innovation — and ship a working prototype before sunrise. Mentors, mid-night snacks, and the buzz of a packed lab included.",
+      "An innovation challenge based on real-world industry problems, starting with a **4-hour Shark Tank–style pitch.Followed by a 20-hour structured hackathon with continuous evaluation, mentor rotations, and bonus flash challenges, ensuring dynamic competition with live scoring.",
     icon: Code2,
     color: "from-amber-500/40 to-rose-500/10",
     day: 1,
