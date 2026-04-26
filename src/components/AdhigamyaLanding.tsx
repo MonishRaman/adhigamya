@@ -1,6 +1,12 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { Calendar, MapPin, Trophy, Sparkles, ChevronRight, Cpu, Zap, Code2, Brain, Network, Rocket, ArrowRight, Menu, X } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { Calendar, MapPin, Trophy, Sparkles, ChevronRight, Code2, Zap, Rocket, ArrowRight, Menu, X } from "lucide-react";
+import { events as ALL_EVENTS, type EventDetail } from "@/data/events";
+import { InstitutionLogos } from "@/components/SiteFooterLogos";
+import dsatm from "@/assets/dsatm-iqac.png";
+import dsi from "@/assets/dsi-logo.png";
+import csi from "@/assets/csi-logo.png";
 
 const REGISTER_URL = "https://forms.gle/PHmV7iH1A7CuWjq98";
 
@@ -36,11 +42,13 @@ function Navbar() {
         <div className={`flex items-center justify-between rounded-2xl px-4 sm:px-6 py-3 transition-all duration-500 ${
           scrolled ? "glass shadow-card" : "bg-transparent"
         }`}>
-          <a href="#top" className="flex items-center gap-2 group">
-            <div className="h-9 w-9 rounded-lg bg-hero shadow-neon flex items-center justify-center font-pixel text-lg text-primary-foreground">
-              A
+          <a href="#top" className="flex items-center gap-3 group">
+            <div className="flex -space-x-2">
+              <img src={dsi} alt="DSI" className="h-8 w-8 rounded-full bg-white p-0.5 ring-2 ring-background object-contain" />
+              <img src={dsatm} alt="DSATM" className="h-8 w-8 rounded-full bg-white p-0.5 ring-2 ring-background object-contain" />
+              <img src={csi} alt="CSI" className="h-8 w-8 rounded-full bg-white p-0.5 ring-2 ring-background object-contain" />
             </div>
-            <span className="font-display text-base sm:text-lg tracking-wider">ADHIGAMYA</span>
+            <span className="font-display text-base sm:text-lg tracking-wider hidden sm:inline">ADHIGAMYA</span>
           </a>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -100,7 +108,6 @@ function Hero() {
   const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
-  // Live countdown to 4 May 2026
   const [time, setTime] = useState({ d: 0, h: 0, m: 0, s: 0 });
   useEffect(() => {
     const target = new Date("2026-05-04T09:00:00").getTime();
@@ -120,11 +127,10 @@ function Hero() {
 
   return (
     <section id="top" ref={ref} className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-16">
-      {/* aurora & grid backdrops */}
       <div className="absolute inset-0 bg-aurora pointer-events-none" />
       <div className="absolute inset-0 grid-bg pointer-events-none" />
+      <div className="absolute inset-0 scanline pointer-events-none opacity-40" />
 
-      {/* floating orbs */}
       <motion.div style={{ y, opacity }} className="absolute -top-20 -left-20 w-96 h-96 rounded-full bg-primary/30 blur-3xl animate-float-slow pointer-events-none" />
       <motion.div style={{ y, opacity }} className="absolute top-40 -right-20 w-[28rem] h-[28rem] rounded-full bg-accent/30 blur-3xl animate-float-slow pointer-events-none" />
       <motion.div style={{ y, opacity }} className="absolute bottom-0 left-1/3 w-80 h-80 rounded-full bg-secondary/30 blur-3xl animate-float-slow pointer-events-none" />
@@ -136,13 +142,11 @@ function Hero() {
           transition={{ duration: 0.8 }}
           className="flex flex-col items-center text-center"
         >
-          {/* tag */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-xs sm:text-sm text-muted-foreground mb-8">
             <span className="w-2 h-2 rounded-full bg-neon-2 animate-pulse" />
             Department of CSE × CSI Student Branch · DSATM
           </div>
 
-          {/* Title */}
           <motion.h1
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -162,7 +166,6 @@ function Hero() {
             AI · TECH · CONCLAVE — 2026
           </motion.div>
 
-          {/* meta strip */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -176,7 +179,6 @@ function Hero() {
             <span className="inline-flex items-center gap-2"><Trophy className="w-4 h-4 text-neon-3" /> ₹1,00,000+ Prize Pool</span>
           </motion.div>
 
-          {/* Countdown */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -196,7 +198,6 @@ function Hero() {
             ))}
           </motion.div>
 
-          {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -221,6 +222,24 @@ function Hero() {
         </motion.div>
       </div>
     </section>
+  );
+}
+
+/* ---------------- MARQUEE ---------------- */
+function Marquee() {
+  const items = ["AI", "HACKATHON", "CTF", "DATATHON", "PROMPT ENGINEERING", "DEPLOY", "NEURAL", "ADHIGAMYA 2026", "DSATM"];
+  const loop = [...items, ...items, ...items];
+  return (
+    <div className="relative py-6 border-y border-border bg-background/40 overflow-hidden">
+      <div className="flex gap-12 whitespace-nowrap animate-marquee">
+        {loop.map((t, i) => (
+          <span key={i} className="font-pixel text-2xl sm:text-3xl text-muted-foreground/60 inline-flex items-center gap-12">
+            {t}
+            <span className="w-2 h-2 rounded-full bg-neon-2/60" />
+          </span>
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -268,32 +287,20 @@ function About() {
             </motion.div>
           ))}
         </div>
+
+        <div className="mt-20">
+          <div className="text-center text-xs uppercase tracking-[0.3em] text-muted-foreground mb-8">// Presented By</div>
+          <InstitutionLogos />
+        </div>
       </div>
     </section>
   );
 }
 
 /* ---------------- EVENTS ---------------- */
-type EventItem = {
-  name: string;
-  tag: string;
-  desc: string;
-  icon: React.ComponentType<{ className?: string }>;
-  color: string;
-};
-
-const day1: EventItem[] = [
-  { name: "Sutra Vishleshan", tag: "Datathon", desc: "Decode patterns hidden in the data. Wrangle, model, and present insights against the clock.", icon: Brain, color: "from-fuchsia-500/40 to-purple-500/10" },
-  { name: "Yantra Drishti", tag: "Prompt to Pixel", desc: "Craft prompts that bend pixels. The sharpest visual storyteller wins.", icon: Sparkles, color: "from-cyan-500/40 to-blue-500/10" },
-  { name: "Udbhav", tag: "20-Hour Hackathon", desc: "An overnight sprint to ship. Real problems, real prototypes, infinite caffeine.", icon: Code2, color: "from-amber-500/40 to-rose-500/10" },
-];
-
-const day2: EventItem[] = [
-  { name: "Antharveda", tag: "Cyber Heist Simulation", desc: "Step inside a live red-team scenario. Outthink the firewall, outpace the clock.", icon: Network, color: "from-emerald-500/40 to-cyan-500/10" },
-  { name: "Chakraveg", tag: "Tech Relay Race", desc: "Speed × skill × strategy. A multi-leg gauntlet of code, debug, and deploy.", icon: Cpu, color: "from-rose-500/40 to-violet-500/10" },
-];
-
-function EventCard({ e, index }: { e: EventItem; index: number }) {
+function EventCard({ e, index }: { e: EventDetail; index: number }) {
+  const [hovered, setHovered] = useState(false);
+  const Icon = e.icon;
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -301,32 +308,50 @@ function EventCard({ e, index }: { e: EventItem; index: number }) {
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, delay: index * 0.08 }}
       whileHover={{ y: -6 }}
-      className="group relative glass rounded-3xl p-6 sm:p-8 overflow-hidden cursor-pointer"
+      onHoverStart={() => setHovered(true)}
+      onHoverEnd={() => setHovered(false)}
+      className="group relative"
     >
-      <div className={`absolute -inset-px rounded-3xl bg-gradient-to-br ${e.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
-      <div className="relative">
-        <div className="flex items-start justify-between mb-6">
-          <div className="w-12 h-12 rounded-xl bg-hero shadow-neon flex items-center justify-center">
-            <e.icon className="w-6 h-6 text-primary-foreground" />
+      <Link
+        to="/events/$slug"
+        params={{ slug: e.slug }}
+        className="block glass rounded-3xl p-6 sm:p-8 overflow-hidden cursor-pointer h-full"
+      >
+        <div className={`absolute -inset-px rounded-3xl bg-gradient-to-br ${e.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
+        <div className="relative">
+          <div className="flex items-start justify-between mb-6">
+            <div className="w-12 h-12 rounded-xl bg-hero shadow-neon flex items-center justify-center">
+              <Icon className="w-6 h-6 text-primary-foreground" />
+            </div>
+            <span className="font-pixel text-xs px-3 py-1 rounded-full bg-foreground/5 border border-border text-muted-foreground">
+              {e.tag}
+            </span>
           </div>
-          <span className="font-pixel text-xs px-3 py-1 rounded-full bg-foreground/5 border border-border text-muted-foreground">
-            {e.tag}
-          </span>
-        </div>
-        <h3 className="font-display text-2xl sm:text-3xl mb-3 group-hover:text-gradient transition-all">
-          {e.name}
-        </h3>
-        <p className="text-muted-foreground leading-relaxed">{e.desc}</p>
+          <h3 className="font-display text-2xl sm:text-3xl mb-3 group-hover:text-gradient transition-all">
+            {e.name}
+          </h3>
+          <p className="text-muted-foreground leading-relaxed">{e.desc}</p>
 
-        <div className="mt-6 flex items-center gap-2 text-sm text-neon opacity-0 group-hover:opacity-100 transition-opacity">
-          Learn more <ArrowRight className="w-4 h-4" />
+          <motion.div
+            initial={false}
+            animate={{
+              opacity: hovered ? 1 : 0,
+              y: hovered ? 0 : 8,
+            }}
+            transition={{ duration: 0.25 }}
+            className="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-hero text-primary-foreground text-sm font-medium shadow-neon"
+          >
+            Learn more <ArrowRight className="w-4 h-4" />
+          </motion.div>
         </div>
-      </div>
+      </Link>
     </motion.div>
   );
 }
 
 function Events() {
+  const day1 = ALL_EVENTS.filter((e) => e.day === 1);
+  const day2 = ALL_EVENTS.filter((e) => e.day === 2);
   return (
     <section id="events" className="relative py-24 sm:py-32">
       <div className="absolute inset-0 bg-aurora opacity-40 pointer-events-none" />
@@ -342,9 +367,9 @@ function Events() {
           <h2 className="font-display text-4xl sm:text-6xl">
             Five events. <span className="text-gradient">One arena.</span>
           </h2>
+          <p className="text-muted-foreground mt-4 text-sm">Hover any card and click <span className="text-foreground">Learn more</span> for full details.</p>
         </motion.div>
 
-        {/* Day 1 */}
         <div className="mb-20">
           <div className="flex items-center gap-4 mb-8">
             <div className="font-pixel text-5xl text-gradient">DAY 01</div>
@@ -352,11 +377,10 @@ function Events() {
             <div className="font-display text-sm tracking-widest text-muted-foreground">04 · MAY · 2026</div>
           </div>
           <div className="grid md:grid-cols-3 gap-5">
-            {day1.map((e, i) => <EventCard key={e.name} e={e} index={i} />)}
+            {day1.map((e, i) => <EventCard key={e.slug} e={e} index={i} />)}
           </div>
         </div>
 
-        {/* Day 2 */}
         <div>
           <div className="flex items-center gap-4 mb-8">
             <div className="font-pixel text-5xl text-gradient">DAY 02</div>
@@ -364,7 +388,7 @@ function Events() {
             <div className="font-display text-sm tracking-widest text-muted-foreground">05 · MAY · 2026</div>
           </div>
           <div className="grid md:grid-cols-2 gap-5">
-            {day2.map((e, i) => <EventCard key={e.name} e={e} index={i} />)}
+            {day2.map((e, i) => <EventCard key={e.slug} e={e} index={i} />)}
           </div>
         </div>
       </div>
@@ -556,7 +580,11 @@ function CtaFooter() {
           </div>
         </motion.div>
 
-        <footer className="mt-16 pt-8 border-t border-border text-center text-sm text-muted-foreground">
+        <div className="mt-16">
+          <InstitutionLogos />
+        </div>
+
+        <footer className="mt-12 pt-8 border-t border-border text-center text-sm text-muted-foreground">
           <div className="font-display tracking-widest text-foreground mb-2">DAYANANDA SAGAR ACADEMY OF TECHNOLOGY AND MANAGEMENT</div>
           <div className="text-xs">Autonomous under VTU · Affiliated to VTU, Belgaum · NAAC A+ · NBA Accredited</div>
           <div className="mt-6 text-xs opacity-60">© 2026 ADHIGAMYA — AI Tech Conclave · Department of CSE × CSI Student Branch DSATM</div>
@@ -572,6 +600,7 @@ export default function AdhigamyaLanding() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Navbar />
       <Hero />
+      <Marquee />
       <About />
       <Events />
       <Prize />
