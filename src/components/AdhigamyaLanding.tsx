@@ -86,7 +86,7 @@ function Navbar() {
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="md:hidden mt-2 glass rounded-2xl p-4 flex flex-col gap-3"
+            className="md:hidden mt-2 rounded-2xl p-4 flex flex-col gap-3 border border-white/10" style={{ background: 'oklch(0.18 0.04 280 / 0.95)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)' }}
           >
             {links.map((l) => (
               <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="text-sm text-muted-foreground hover:text-foreground py-2">
@@ -431,7 +431,7 @@ function Prize() {
           <div className="relative">
             <Trophy className="w-14 h-14 mx-auto text-neon-3 mb-6" />
             <div className="text-xs uppercase tracking-[0.3em] text-neon-2 mb-4">// Prize Pool</div>
-            <div className="font-pixel text-7xl sm:text-9xl text-gradient glow-text mb-4">
+            <div className="font-pixel text-5xl sm:text-9xl text-gradient glow-text mb-4">
               ₹1,00,000+
             </div>
             <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-8">
