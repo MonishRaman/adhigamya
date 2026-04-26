@@ -59,7 +59,7 @@ export const events: EventDetail[] = [
     team: "Teams of 3",
     prize: "₹15,000",
     rules: [
-      "Platform Integrity: Any misuse of competition platforms, tools, accounts, or interference with systems and other teams will result in immediate disqualification.).",
+      "Platform Integrity: Any misuse of competition platforms, tools, accounts, or interference with systems and other teams will result in immediate disqualification.",
       "All prompts used must be submitted alongside the final image.",
       "No Plagiarism: All submissions must be original works created during the competition, and copied, pre-made, or reused content will lead to disqualification.",
       "Prompt Authenticity: All prompts must be independently written by the participants, and the use of AI or any automated tool to generate prompts is not allowed.",
