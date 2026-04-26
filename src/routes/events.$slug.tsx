@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, Calendar, Clock, Users, Trophy, ShieldCheck, Gavel, Sparkles } from "lucide-react";
+import { ArrowLeft, ArrowRight, Calendar, Clock, Users, Trophy, ShieldCheck } from "lucide-react";
 import { eventBySlug, events } from "@/data/events";
 import { InstitutionLogos } from "@/components/SiteFooterLogos";
 
@@ -124,34 +124,8 @@ function EventDetailPage() {
           </motion.div>
         </section>
 
-        {/* rounds */}
+        {/* rules */}
         <section className="mx-auto max-w-6xl px-4 sm:px-6 py-10">
-          <div className="flex items-center gap-3 mb-8">
-            <Sparkles className="w-5 h-5 text-neon-2" />
-            <h2 className="font-display text-2xl sm:text-3xl">Format & Rounds</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-4">
-            {e.rounds.map((r, i) => (
-              <motion.div
-                key={r.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="glass rounded-2xl p-6 relative overflow-hidden group"
-              >
-                <div className="font-pixel text-5xl text-gradient opacity-30 absolute top-2 right-4">
-                  0{i + 1}
-                </div>
-                <div className="font-display text-lg mb-2">{r.title}</div>
-                <p className="text-sm text-muted-foreground leading-relaxed">{r.detail}</p>
-              </motion.div>
-            ))}
-          </div>
-        </section>
-
-        {/* rules + judging */}
-        <section className="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid md:grid-cols-2 gap-5">
           <div className="glass rounded-2xl p-6 sm:p-8">
             <div className="flex items-center gap-3 mb-5">
               <ShieldCheck className="w-5 h-5 text-neon" />
@@ -162,20 +136,6 @@ function EventDetailPage() {
                 <li key={i} className="flex gap-3 text-sm text-muted-foreground">
                   <span className="font-pixel text-neon-2 mt-0.5">{String(i + 1).padStart(2, "0")}</span>
                   <span className="leading-relaxed">{r}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="glass rounded-2xl p-6 sm:p-8">
-            <div className="flex items-center gap-3 mb-5">
-              <Gavel className="w-5 h-5 text-neon-3" />
-              <h3 className="font-display text-xl">Judging Criteria</h3>
-            </div>
-            <ul className="space-y-3">
-              {e.judging.map((j, i) => (
-                <li key={i} className="flex items-center gap-3 text-sm">
-                  <span className="w-2 h-2 rounded-full bg-gradient-to-r from-neon to-neon-2" />
-                  <span>{j}</span>
                 </li>
               ))}
             </ul>

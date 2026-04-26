@@ -14,8 +14,6 @@ export type EventDetail = {
   team: string;
   prize: string;
   rules: string[];
-  rounds: { title: string; detail: string }[];
-  judging: string[];
   contact?: string;
 };
 
@@ -32,21 +30,15 @@ export const events: EventDetail[] = [
     day: 1,
     date: "04 May 2026",
     duration: "5 hours",
-    team: "Teams of 2–3",
-    prize: "₹15,000 + Internship Opportunities",
+    team: "Teams of 3",
+    prize: "₹15,000",
     rules: [
       "Participants must bring their own laptops with required software pre-installed.",
       "Use of pre-trained public models is allowed; plagiarism of submissions is not.",
       "Internet access will be provided; LLM-assisted coding is permitted with disclosure.",
       "Final submissions: cleaned notebook + 5-minute presentation deck.",
-      "Decision of judges is final and binding.",
     ],
-    rounds: [
-      { title: "Round 1 · Data Wrangling", detail: "Clean & explore the released dataset. Submit an EDA notebook within 90 minutes." },
-      { title: "Round 2 · Modelling Sprint", detail: "Build the most accurate / insightful model against the held-out test set." },
-      { title: "Final · Insight Pitch", detail: "Present findings to the jury — clarity of insight outweighs raw accuracy." },
-    ],
-    judging: ["Technical depth (40%)", "Insight quality (30%)", "Presentation (20%)", "Code hygiene (10%)"],
+
   },
   {
     slug: "yantra-drishti",
@@ -68,12 +60,7 @@ export const events: EventDetail[] = [
       "No post-processing beyond basic crop & colour grade.",
       "NSFW / offensive imagery results in immediate disqualification.",
     ],
-    rounds: [
-      { title: "Round 1 · Theme Drop", detail: "Theme announced on stage. 90 minutes to generate three variations." },
-      { title: "Round 2 · The Twist", detail: "A constraint is added (style, palette, era). Refine within 60 minutes." },
-      { title: "Final · Story Wall", detail: "Top finalists narrate the prompt journey behind their hero image." },
-    ],
-    judging: ["Aesthetics (35%)", "Prompt craft (35%)", "Brief alignment (20%)", "Storytelling (10%)"],
+
   },
   {
     slug: "udbhav",
@@ -96,12 +83,7 @@ export const events: EventDetail[] = [
       "Code must be pushed to a public GitHub repo before the deadline.",
       "One representative per team for the final pitch.",
     ],
-    rounds: [
-      { title: "Kickoff", detail: "Tracks revealed, teams check in, ideation kicks off." },
-      { title: "Build Phase", detail: "20 hours of building. Mentors rotate through every 2 hours." },
-      { title: "Demo Day", detail: "5-minute demo + 3-minute Q&A in front of the jury." },
-    ],
-    judging: ["Innovation (25%)", "Technical execution (25%)", "Impact (20%)", "Design & UX (15%)", "Pitch (15%)"],
+
   },
   {
     slug: "antharveda",
@@ -123,12 +105,7 @@ export const events: EventDetail[] = [
       "Write-ups for the final challenge must be submitted alongside flag.",
       "All standard CTF ethics apply.",
     ],
-    rounds: [
-      { title: "Recon", detail: "OSINT + network discovery puzzles. Score per flag captured." },
-      { title: "Exploit", detail: "Web, crypto and binary challenges of escalating difficulty." },
-      { title: "Final · The Heist", detail: "A linked multi-stage challenge. First three to capture the boss-flag win." },
-    ],
-    judging: ["Flags captured", "Speed of capture", "Quality of write-up (tiebreaker)"],
+
   },
   {
     slug: "chakraveg",
@@ -150,13 +127,7 @@ export const events: EventDetail[] = [
       "Each leg has its own time cap; unfinished legs forfeit points.",
       "The relay baton is digital — passed via the race dashboard.",
     ],
-    rounds: [
-      { title: "Leg 1 · Code Sprint", detail: "Solve 3 algorithmic problems within the time cap." },
-      { title: "Leg 2 · Bug Hunt", detail: "Fix a broken repo. All tests must pass." },
-      { title: "Leg 3 · Ship It", detail: "Containerise & deploy a tiny service to a provided cluster." },
-      { title: "Leg 4 · Mystery Box", detail: "Revealed live. Adapt fast." },
-    ],
-    judging: ["Total time across legs", "Penalties for failed checks", "Bonus for elegant solutions"],
+
   },
 ];
 
