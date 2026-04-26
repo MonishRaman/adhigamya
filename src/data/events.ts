@@ -14,6 +14,7 @@ export type EventDetail = {
   team: string;
   prize: string;
   rules: string[];
+  registerUrl: string;
   contact?: string;
 };
 
@@ -41,7 +42,7 @@ export const events: EventDetail[] = [
       "Participants must use only their own systems and internet access, and any unfair external assistance will result in elimination.",
       "All projects will be evaluated by the judging panel based on predefined criteria, and the judges decision will be final."
     ],
-
+    registerUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdB7PRjhBd6IrCDo1cF1QFp38ox9LzVaXiz4SWE0eErWlr1oQ/viewform?usp=sharing&ouid=105271440669232383231",
   },
   {
     slug: "yantra-drishti",
@@ -65,7 +66,7 @@ export const events: EventDetail[] = [
       "No editing beyond basic cropping and colour correction is permitted after image generation.",
       "All decisions regarding disputes, scoring, rule interpretation, and disciplinary action rest solely with the event organizers.",
     ],
-
+    registerUrl: "https://docs.google.com/forms/d/e/1FAIpQLSepAADbm-CrKAvz-Mt2ndfVI4TNriJZjDmyxY0NWd9Pa_WBSw/viewform?usp=dialog",
   },
   {
     slug: "udbhav",
@@ -88,7 +89,7 @@ export const events: EventDetail[] = [
       "Code must be pushed to a public GitHub repo before the deadline.",
       "All solutions, source code, designs, and documentation submitted must be original work created by the team during the hackathon, and any copied or reused project will lead to immediate disqualification.",
     ],
-
+    registerUrl: "https://docs.google.com/forms/d/e/1FAIpQLScYzi5BRfW5U0nw36rbU78Lsr30UrVNC0rS4aLtCVVHhmwZqQ/viewform?usp=dialog",
   },
   {
     slug: "antharveda",
@@ -110,7 +111,7 @@ export const events: EventDetail[] = [
       "Write-ups for the final challenge must be submitted alongside flag.",
       "All standard CTF ethics apply.",
     ],
-
+    registerUrl: "https://docs.google.com/forms/d/e/1FAIpQLSf_7zYqp88V-GG4K_GNnQeI4QyOC0L-EPbmjakLkbHXci1BMg/viewform?usp=dialog",
   },
   {
     slug: "chakraveg",
@@ -133,7 +134,7 @@ export const events: EventDetail[] = [
       "Any form of malpractice or copying leads to immediate disqualification.",
       "All answers must be submitted within the given time limit; late submissions won’t be accepted.",
     ],
-
+    registerUrl: "https://docs.google.com/forms/d/e/1FAIpQLSc0JzvzgFnYLxPY0SrRZr4jjBetXjg-qi8F5_6MKyQFzKv3Ig/viewform?usp=dialog",
   },
 ];
 

@@ -1,14 +1,14 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Calendar, MapPin, Trophy, Sparkles, ChevronRight, Code2, Zap, Rocket, ArrowRight, Menu, X } from "lucide-react";
+import { Calendar, MapPin, Trophy, Sparkles, ChevronRight, Code2, Zap, ArrowRight, Menu, X } from "lucide-react";
 import { events as ALL_EVENTS, type EventDetail } from "@/data/events";
 import { InstitutionLogos } from "@/components/SiteFooterLogos";
 import dsatm from "@/assets/dsi-logo.png";
 // import dsi from "@/assets/dsi-logo.png";
 import csi from "@/assets/csi-logo.png";
 
-const REGISTER_URL = "https://forms.gle/PHmV7iH1A7CuWjq98";
+
 
 /* ---------------- NAVBAR ---------------- */
 function Navbar() {
@@ -66,14 +66,6 @@ function Navbar() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <a
-              href={REGISTER_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-hero text-primary-foreground font-medium text-sm shadow-neon hover:scale-105 transition-transform"
-            >
-              Register <ArrowRight className="w-4 h-4" />
-            </a>
             <button onClick={() => setOpen(!open)} className="md:hidden p-2 text-foreground" aria-label="Menu">
               {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -91,14 +83,7 @@ function Navbar() {
                 {l.label}
               </a>
             ))}
-            <a
-              href={REGISTER_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-hero text-primary-foreground font-medium text-sm"
-            >
-              Register Now <ArrowRight className="w-4 h-4" />
-            </a>
+
           </motion.div>
         )}
       </div>
@@ -219,16 +204,8 @@ function Hero() {
             className="flex flex-col sm:flex-row gap-4 items-center"
           >
             <a
-              href={REGISTER_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-hero text-primary-foreground font-semibold shadow-neon animate-pulse-glow hover:scale-105 transition-transform"
-            >
-              Register Now <Rocket className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-            </a>
-            <a
               href="#events"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl glass text-foreground font-medium hover:bg-white/10 transition-colors"
+              className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-hero text-primary-foreground font-semibold shadow-neon animate-pulse-glow hover:scale-105 transition-transform"
             >
               Explore Events <ChevronRight className="w-5 h-5" />
             </a>
@@ -435,14 +412,7 @@ function Prize() {
             <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-8">
               Cash prizes, internships, certificates and goodies — distributed across all five flagship events.
             </p>
-            <a
-              href={REGISTER_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-hero text-primary-foreground font-semibold shadow-neon hover:scale-105 transition-transform"
-            >
-              Claim Your Spot <Rocket className="w-5 h-5" />
-            </a>
+
           </div>
         </motion.div>
       </div>
@@ -581,15 +551,13 @@ function CtaFooter() {
               Ready to <span className="text-gradient">build the future?</span>
             </h2>
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-              Slots are limited. Lock in your participation today.
+              Slots are limited. Pick an event and register today.
             </p>
             <a
-              href={REGISTER_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#events"
               className="inline-flex items-center gap-2 px-10 py-4 rounded-xl bg-hero text-primary-foreground font-semibold shadow-neon animate-pulse-glow hover:scale-105 transition-transform"
             >
-              Register on Google Forms <ArrowRight className="w-5 h-5" />
+              View Events <ArrowRight className="w-5 h-5" />
             </a>
           </div>
         </motion.div>

@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowRight, Calendar, Clock, Users, Trophy, ShieldCheck } fr
 import { eventBySlug, events } from "@/data/events";
 import { InstitutionLogos } from "@/components/SiteFooterLogos";
 
-const REGISTER_URL = "https://forms.gle/PHmV7iH1A7CuWjq98";
+
 
 export const Route = createFileRoute("/events/$slug")({
   loader: ({ params }) => {
@@ -106,7 +106,7 @@ function EventDetailPage() {
 
             <div className="flex flex-wrap gap-3 mt-2">
               <a
-                href={REGISTER_URL}
+                href={e.registerUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-hero text-primary-foreground font-semibold shadow-neon animate-pulse-glow hover:scale-105 transition-transform"
