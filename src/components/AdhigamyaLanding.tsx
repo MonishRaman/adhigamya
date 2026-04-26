@@ -34,14 +34,12 @@ function Navbar() {
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "py-3" : "py-5"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "py-3" : "py-5"
+        }`}
     >
       <div className={`mx-auto max-w-7xl px-4 sm:px-6`}>
-        <div className={`flex items-center justify-between rounded-2xl px-4 sm:px-6 py-3 transition-all duration-500 ${
-          scrolled ? "glass shadow-card" : "bg-transparent"
-        }`}>
+        <div className={`flex items-center justify-between rounded-2xl px-4 sm:px-6 py-3 transition-all duration-500 ${scrolled ? "glass shadow-card" : "bg-transparent"
+          }`}>
           <a href="#top" className="flex items-center gap-3 group">
             <div className="flex gap-2">
               <img
@@ -151,11 +149,11 @@ function Hero() {
         >
 
           <div className="flex flex-col items-center gap-2 px-4 py-3 rounded-2xl glass text-base sm:text-lg font-bold text-foreground mb-8">
-  <span className="flex items-center gap-2">
-    <span className="w-2 h-2 rounded-full bg-neon-2 animate-pulse" />
-    Dayananda Sagar Academy of Technology and Management
-  </span>
-</div>
+            <span className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-neon-2 animate-pulse" />
+              Dayananda Sagar Academy of Technology and Management
+            </span>
+          </div>
           <div className="flex flex-col items-center gap-2 px-4 py-3 rounded-2xl glass text-xs sm:text-sm text-muted-foreground mb-8">
             <span className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-neon-2 animate-pulse" />
@@ -497,7 +495,7 @@ function Team() {
     { name: "Dr. M Ravishankar", role: "Principal — DSATM" },
     { name: "Dr. C. Nandini", role: "Vice Principal · Prof & Head, Dept of CSE" },
     { name: "Prof. Bhavya V", role: "CSI Student Branch Counselor · Asst. Prof, CSE" },
-    { name: "Prof. Basker Rao K", role: "Senior Lifetime Member CSI · Assoc. Prof, CSE" },
+    { name: "Prof. Bhasker Rao K", role: "Senior Lifetime Member CSI · Assoc. Prof, CSE" },
   ];
 
   const presidents = [
