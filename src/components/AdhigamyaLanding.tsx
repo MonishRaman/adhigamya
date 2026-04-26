@@ -4,8 +4,8 @@ import { Link } from "@tanstack/react-router";
 import { Calendar, MapPin, Trophy, Sparkles, ChevronRight, Code2, Zap, Rocket, ArrowRight, Menu, X } from "lucide-react";
 import { events as ALL_EVENTS, type EventDetail } from "@/data/events";
 import { InstitutionLogos } from "@/components/SiteFooterLogos";
-import dsatm from "@/assets/dsatm-iqac.png";
-import dsi from "@/assets/dsi-logo.png";
+import dsatm from "@/assets/dsi-logo.png";
+// import dsi from "@/assets/dsi-logo.png";
 import csi from "@/assets/csi-logo.png";
 
 const REGISTER_URL = "https://forms.gle/PHmV7iH1A7CuWjq98";
@@ -43,10 +43,17 @@ function Navbar() {
           scrolled ? "glass shadow-card" : "bg-transparent"
         }`}>
           <a href="#top" className="flex items-center gap-3 group">
-            <div className="flex -space-x-2">
-              <img src={dsi} alt="DSI" className="h-8 w-8 rounded-full bg-white p-0.5 ring-2 ring-background object-contain" />
-              <img src={dsatm} alt="DSATM" className="h-8 w-8 rounded-full bg-white p-0.5 ring-2 ring-background object-contain" />
-              <img src={csi} alt="CSI" className="h-8 w-8 rounded-full bg-white p-0.5 ring-2 ring-background object-contain" />
+            <div className="flex gap-2">
+              <img
+                src={dsatm}
+                alt="DSATM"
+                className="h-14 w-14 sm:h-16 sm:w-16 rounded-full bg-white p-1 ring-2 ring-background object-contain"
+              />
+              <img
+                src={csi}
+                alt="DSATM"
+                className="h-14 w-14 sm:h-16 sm:w-16 rounded-full bg-white p-1 ring-2 ring-background object-contain"
+              />
             </div>
             <span className="font-display text-base sm:text-lg tracking-wider hidden sm:inline">ADHIGAMYA</span>
           </a>
@@ -142,9 +149,18 @@ function Hero() {
           transition={{ duration: 0.8 }}
           className="flex flex-col items-center text-center"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-xs sm:text-sm text-muted-foreground mb-8">
-            <span className="w-2 h-2 rounded-full bg-neon-2 animate-pulse" />
-            Department of CSE × CSI Student Branch · DSATM
+
+          <div className="flex flex-col items-center gap-2 px-4 py-3 rounded-2xl glass text-base sm:text-lg font-bold text-foreground mb-8">
+  <span className="flex items-center gap-2">
+    <span className="w-2 h-2 rounded-full bg-neon-2 animate-pulse" />
+    Dayananda Sagar Academy of Technology and Management
+  </span>
+</div>
+          <div className="flex flex-col items-center gap-2 px-4 py-3 rounded-2xl glass text-xs sm:text-sm text-muted-foreground mb-8">
+            <span className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-neon-2 animate-pulse" />
+              Department of CSE × CSI Student Branch · DSATM
+            </span>
           </div>
 
           <motion.h1
