@@ -473,6 +473,24 @@ function Team() {
     { name: "Ms. Anagha H Prashanth", role: "CSI President · CSE 6th Sem" },
   ];
 
+  const treasurers = [
+    { name: "Mr. Likith P", role: "Treasurer" },
+    { name: "Ms. Amulya Shree M", role: "Treasurer" },
+  ];
+
+  const techSecretaries = [
+    { name: "Mr. Akanksh Adi Chandra", role: "Technical Secretary" },
+    { name: "Ms. Amisha A R", role: "Technical Secretary" },
+  ];
+
+  const eventsSecretary = [
+    { name: "Mr. Aryan Jain", role: "Events & Communication Secretary" },
+  ];
+
+  const adminSecretary = [
+    { name: "Mr. Monish R", role: "Administrative Secretary" },
+  ];
+
   return (
     <section id="team" className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -512,6 +530,94 @@ function Team() {
           <div className="text-sm uppercase tracking-widest text-muted-foreground mb-6 text-center">CSI Presidents</div>
           <div className="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
             {presidents.map((p, i) => (
+              <motion.div
+                key={p.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="glass rounded-2xl p-6 text-center"
+              >
+                <div className="w-14 h-14 mx-auto rounded-full bg-gradient-to-br from-secondary to-accent flex items-center justify-center font-pixel text-xl text-primary-foreground mb-4">
+                  {p.name.split(" ").map(n => n[0]).slice(1, 3).join("")}
+                </div>
+                <div className="font-medium text-foreground">{p.name}</div>
+                <div className="text-xs text-muted-foreground mt-1">{p.role}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-14">
+          <div className="text-sm uppercase tracking-widest text-muted-foreground mb-6 text-center">Technical Secretaries</div>
+          <div className="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+            {techSecretaries.map((p, i) => (
+              <motion.div
+                key={p.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="glass rounded-2xl p-6 text-center"
+              >
+                <div className="w-14 h-14 mx-auto rounded-full bg-gradient-to-br from-secondary to-accent flex items-center justify-center font-pixel text-xl text-primary-foreground mb-4">
+                  {p.name.split(" ").map(n => n[0]).slice(1, 3).join("")}
+                </div>
+                <div className="font-medium text-foreground">{p.name}</div>
+                <div className="text-xs text-muted-foreground mt-1">{p.role}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-14">
+          <div className="text-sm uppercase tracking-widest text-muted-foreground mb-6 text-center">Events & Communication Secretary</div>
+          <div className="grid sm:grid-cols-1 gap-4 max-w-md mx-auto">
+            {eventsSecretary.map((p, i) => (
+              <motion.div
+                key={p.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="glass rounded-2xl p-6 text-center"
+              >
+                <div className="w-14 h-14 mx-auto rounded-full bg-gradient-to-br from-secondary to-accent flex items-center justify-center font-pixel text-xl text-primary-foreground mb-4">
+                  {p.name.split(" ").map(n => n[0]).slice(1, 3).join("")}
+                </div>
+                <div className="font-medium text-foreground">{p.name}</div>
+                <div className="text-xs text-muted-foreground mt-1">{p.role}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-14">
+          <div className="text-sm uppercase tracking-widest text-muted-foreground mb-6 text-center">Administrative Secretary</div>
+          <div className="grid sm:grid-cols-1 gap-4 max-w-md mx-auto">
+            {adminSecretary.map((p, i) => (
+              <motion.div
+                key={p.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="glass rounded-2xl p-6 text-center"
+              >
+                <div className="w-14 h-14 mx-auto rounded-full bg-gradient-to-br from-secondary to-accent flex items-center justify-center font-pixel text-xl text-primary-foreground mb-4">
+                  {p.name.split(" ").map(n => n[0]).slice(1, 3).join("")}
+                </div>
+                <div className="font-medium text-foreground">{p.name}</div>
+                <div className="text-xs text-muted-foreground mt-1">{p.role}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-14">
+          <div className="text-sm uppercase tracking-widest text-muted-foreground mb-6 text-center">Treasurer</div>
+          <div className="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+            {treasurers.map((p, i) => (
               <motion.div
                 key={p.name}
                 initial={{ opacity: 0, y: 20 }}
