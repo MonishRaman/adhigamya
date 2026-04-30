@@ -30,7 +30,7 @@ export const events: EventDetail[] = [
     color: "from-fuchsia-500/40 to-purple-500/10",
     day: 1,
     date: "04 May 2026",
-    duration: "6 hours (11:00 AM – 5:00 PM)",
+    duration: "6 hours (11:30 AM – 5:30 PM)",
     team: "Teams of 3",
     prize: "₹15,000",
     rules: [
@@ -55,7 +55,7 @@ export const events: EventDetail[] = [
     color: "from-cyan-500/40 to-blue-500/10",
     day: 1,
     date: "04 May 2026",
-    duration: "6 hours (11:00 AM – 5:00 PM)",
+    duration: "6 hours (11:30 AM – 5:30 PM)",
     team: "Teams of 3",
     prize: "₹15,000",
     rules: [
@@ -102,7 +102,7 @@ export const events: EventDetail[] = [
     color: "from-emerald-500/40 to-cyan-500/10",
     day: 2,
     date: "05 May 2026",
-    duration: "6 hours (10:00 AM - 3:00 AM)",
+    duration: "6 hours (09:00 AM - 3:00 AM)",
     team: "Teams of 3",
     prize: "₹15,000",
     rules: [
