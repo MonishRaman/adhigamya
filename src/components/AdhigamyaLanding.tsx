@@ -425,6 +425,7 @@ function Sponsors() {
   const items = [
     { name: "Derbi Foundation", tag: "Fueling Dreams" },
     { name: "V6 Shelters", tag: "Building Tomorrow" },
+    { name: "Sagar Hospitals", tag: "With you, For Life" },
   ];
   return (
     <section id="sponsors" className="relative py-20 sm:py-28">
