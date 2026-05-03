@@ -119,7 +119,7 @@ export const events: EventDetail[] = [
     tag: "Tech Relay Race",
     desc: "Speed × skill × strategy. A multi-leg gauntlet of code, debug, and deploy.",
     longDesc:
-      "Chakraveg (चक्रवेग — 'wheel-speed') is a technical relay race. Each leg of the race tests a different muscle — Quiz, coding, debugging a broken codebase, container deployment, and a surprise final challenge.",
+      "Chakraveg (चक्रवेग — 'wheel-speed') is a technical relay race. Each leg of the race tests a different muscle — Quiz, coding, output and debugging Rounds.",
     icon: Cpu,
     color: "from-rose-500/40 to-violet-500/10",
     day: 2,
